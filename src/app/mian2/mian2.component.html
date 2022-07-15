@@ -1,0 +1,49 @@
+<div class="site-page">
+    <nz-page-header>
+      <nz-page-header-title>Барабинск</nz-page-header-title>
+      <nz-page-header-extra>
+        <nz-space>
+          <a nz-button nzType="link" href="Main" class="button-menu">Главная</a>
+          <a nz-button nzType="link" href="City" class="button-menu">Население</a>
+          <a nz-button nzType="link" href="Peepol" class="button-menu">Пользователи</a>
+          <a nz-button nzType="link" href="Me" class="button-menu">О разработчике</a>
+        </nz-space>
+      </nz-page-header-extra>
+      <nz-page-header-content>
+  
+        <div nz-row nzJustify="space-around" nzAlign="middle">
+          <div nz-col nzFlex="2">
+            <img
+            nz-image
+            width="500px"
+            height="300px"
+            nzSrc="assets/img/img2.jpg"
+            alt=""
+          />
+          
+      </div>
+      <div nz-col nzFlex="5"></div>
+      <div nz-col nzFlex="5"><p class="height 100">
+      <div nz-col nzFlex="5"></div>
+    <form nz-form [formGroup]="myFirstReactiveForm" (submit)="onSubmit()" >
+      <br>
+      <input nz-input type="text" id="name" formControlName="name" id="userForm"/>
+      <br/><br/>
+  
+      <input nz-input type="text" id="name2" formControlName="name2" id="userForm" />
+      <br/><br/>
+  
+      <input nz-input type="text" id="name3" formControlName="name3" id="userForm" />
+      <br/><br/>
+  
+  
+      <button nz-button nzType="primary" type="submit" (ngsubmit)="onSubmit()">Save</button>
+    </form>
+  
+     </div>
+    </div>
+    <br>
+      </nz-page-header-content>
+    </nz-page-header>
+  </div>
+  

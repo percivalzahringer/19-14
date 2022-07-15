@@ -1,0 +1,42 @@
+<div class="site-page">
+  <nz-page-header>
+    <nz-page-header-title>Барабинск</nz-page-header-title>
+    <nz-page-header-extra>
+      <nz-space>
+        <a nz-button nzType="link" href="Main" class="button-menu">Главная</a>
+        <a nz-button nzType="link" href="City" class="button-menu">Население</a>
+        <a nz-button nzType="link" href="Peepol" class="button-menu">Пользователи</a>
+        <a nz-button nzType="link" href="Me" class="button-menu">О разработчике</a>
+      </nz-space>
+    </nz-page-header-extra>
+    <nz-page-header-content>
+<nz-table #basicTable nzTemplateMode>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>ФИО</th>
+      <th>Активность</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+      <td>
+        <input nz-input type="text" [(ngModel)]="user.id" placeholder="ID"/>
+      </td>
+      <td>
+        <input nz-input type="text" [(ngModel)]="user.name"/>
+      </td>
+      <td>
+        <input nz-input type="text" [(ngModel)]="user.act" />
+      </td>
+      <td>
+        <button nz-button type="submit" (click)="saveUser()">Добавить</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+</nz-page-header-content>
+</nz-page-header>
+</div>

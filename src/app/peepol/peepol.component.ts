@@ -1,0 +1,40 @@
+import { Component, OnInit } from '@angular/core';
+import { User } from '../models/user';
+import { NzModalService } from 'ng-zorro-antd/modal';
+
+@Component({
+  selector: 'app-peepol',
+  templateUrl: './peepol.component.html',
+  styleUrls: ['./peepol.component.css']
+})
+export class PeepolComponent implements OnInit {
+  users?: User[] = JSON.parse(localStorage.getItem('users') as string);
+  constructor(private modal: NzModalService) {}
+
+  ngOnInit(): void {
+    this.saveUser();
+  }
+
+  saveUser() {
+    if (!this.users) {
+      localStorage.setItem('users', `[]`);
+    }
+  }
+  showModal(id: number, name:any) {
+    this.modal.confirm({
+      nzTitle: `Удалить пользователя? ${name}`,
+      nzCancelText: 'Отмена',
+      nzOkDanger: true,
+      nzOnOk: () => this.deleteUser(id),
+    });
+
+  }
+  deleteUser(id: number) {
+    const index = this.users!.findIndex(n => n.id === id);
+    if (index !== -1) {
+      this.users!.splice(index, 1);
+    }
+
+    localStorage.setItem('users', JSON.stringify(this.users))
+  }
+}

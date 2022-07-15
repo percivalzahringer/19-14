@@ -1,0 +1,41 @@
+<div class="site-page">
+    <nz-page-header>
+      <nz-page-header-title>Барабинск</nz-page-header-title>
+      <nz-page-header-extra>
+        <nz-space>
+          <a nz-button nzType="link" href="Main" class="button-menu">Главная</a>
+          <a nz-button nzType="link" href="City" class="button-menu">Население</a>
+          <a nz-button nzType="link" href="Peepol" class="button-menu">Пользователи</a>
+          <a nz-button nzType="link" href="Me" class="button-menu">О разработчике</a>
+        </nz-space>
+      </nz-page-header-extra>
+      
+      <nz-page-header-content>
+        <a nz-button nzType="default" routerLink="/PeepAdd">Создать</a>
+        <nz-table #basicTable nzTemplateMode>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>ФИО</th>
+              <th>Активность</th>
+              <th>Правка</th>
+              <th>Удалить</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{ user.id }}</td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.act }}</td>
+              <td>
+                <button nzType="default"  routerLink="/PeepEdit/{{user.id}}"> <span> Изменить</span></button>
+              </td>
+                <td> 
+                  <button nzType="default" (click)="showModal(user.id, user.name)" nzDanger> <span> Удалить</span></button>
+                </td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </nz-page-header-content>
+    </nz-page-header>
+  </div>
